@@ -1,4 +1,4 @@
-#include "header.h"
+#include "main.h"
 
 int print_string(const char *s)
 {
