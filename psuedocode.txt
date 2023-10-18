@@ -1,0 +1,8 @@
+Printing my string
+1. Error Segmentation error
+
+Firstly receive the string using the va_args
+Find the strlen and assign a variable
+Using that variable allocate memory using malloc
+Write a loop that iterares through the string and prints each character
+
