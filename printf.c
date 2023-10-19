@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 'd')
 		{
-			long long int d;
+			int d;
 
 			d = va_arg(arg, int);
 			if (d < 0)
