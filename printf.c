@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - function to print different data types
  * @format: char array
@@ -8,6 +9,8 @@
 int _printf(const char *format, ...)
 {
 	int i;
+	int d;
+	char c;
 	va_list arg;
 
 	va_start(arg, *format);
@@ -27,8 +30,6 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == 'c')
 		{
-			char c;
-
 			c = va_arg(arg, int);
 			_putchar(c);
 			i += 1;
@@ -36,13 +37,12 @@ int _printf(const char *format, ...)
 
 		else if (format[i + 1] == 'd')
 		{
-			int d;
-
 			d = va_arg(arg, int);
+
 			if (d < 0)
 			{
 				_putchar('-');
-				d = -1 * d;
+				d = (-1) * d;
 			}
 			_putchar(d + '0');
 			i += 1;
