@@ -9,7 +9,7 @@ int print_string(const char *s)
 	{
 		_putchar(s[i]);
 		i++;
-		k++;
+		k = strlen(s);
 	}
 	return (k);
 }

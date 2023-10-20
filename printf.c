@@ -20,15 +20,12 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			count++;
 		}
 
 		else if (format[i + 1] == '%')
 		{
 			_putchar('%');
 			i += 1;
-			count++;
-
 		}
 
 		else if (format[i + 1] == 'c')
@@ -36,7 +33,6 @@ int _printf(const char *format, ...)
 			c = va_arg(arg, int);
 			_putchar(c);
 			i += 1;
-			count++;
 		}
 
 		else if (format[i + 1] == 'd')
@@ -50,7 +46,7 @@ int _printf(const char *format, ...)
 			}
 			write(1, &d, sizeof(d));
 			i += 1;
-			count++;
+
 		}
 
 		else if (format[i + 1] == 's')
@@ -59,6 +55,7 @@ int _printf(const char *format, ...)
 			i += 1;
 			count += (k - 1);
 		}
+		count++;
 	}
 
 	va_end(arg);
