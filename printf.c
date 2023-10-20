@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _printf - My very own printf function
- * @format: First stirng
- * Return: ALways 0
+ * _printf - function to print different data types
+ * @format: char array
+ * Return: int
  */
 
 int _printf(const char *format, ...)
@@ -18,11 +18,13 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 		}
+
 		else if (format[i + 1] == '%')
 		{
 			_putchar('%');
 			i += 1;
 		}
+
 		else if (format[i + 1] == 'c')
 		{
 			char c;
@@ -31,6 +33,7 @@ int _printf(const char *format, ...)
 			_putchar(c);
 			i += 1;
 		}
+
 		else if (format[i + 1] == 'd')
 		{
 			int d;
@@ -44,12 +47,15 @@ int _printf(const char *format, ...)
 			_putchar(d + '0');
 			i += 1;
 		}
+
 		else if (format[i + 1] == 's')
 		{
 			print_string(va_arg(arg, char*));
 			i += 1;
 		}
 	}
+
 	va_end(arg);
+
 	return (0);
 }

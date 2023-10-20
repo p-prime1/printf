@@ -12,4 +12,3 @@ int print_string(const char *s)
 	}
 	return (0);
 }
-
