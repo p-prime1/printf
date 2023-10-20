@@ -8,8 +8,8 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i,count,k;
-	long unsigned int d;
+	int i,count,k;
+	/**long int d;*/
 	char c;
 	va_list arg;
 
@@ -20,12 +20,14 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
+			count += 1;
 		}
 
 		else if (format[i + 1] == '%')
 		{
 			_putchar('%');
 			i += 1;
+			count += 1;
 		}
 
 		else if (format[i + 1] == 'c')
@@ -33,9 +35,10 @@ int _printf(const char *format, ...)
 			c = va_arg(arg, int);
 			_putchar(c);
 			i += 1;
+			count += 1;
 		}
 
-		else if (format[i + 1] == 'd')
+/**		else if (format[i + 1] == 'd')
 		{
 			d = va_arg(arg, int);
 
@@ -44,21 +47,20 @@ int _printf(const char *format, ...)
 				_putchar('-');
 				d = (-1) * d;
 			}
-			write(1, &d, sizeof(d));
+			write(1, &d, 8);
 			i += 1;
+			count += 1;
 
 		}
-
+**/
 		else if (format[i + 1] == 's')
 		{
 			k = print_string(va_arg(arg, char*));
 			i += 1;
 			count += (k - 1);
 		}
-		count++;
 	}
 
 	va_end(arg);
-
 	return (count);
 }
