@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i,count,k;
-	/**long int d;*/
+	int i, count, k;
 	char c;
 	va_list arg;
 
@@ -38,21 +37,22 @@ int _printf(const char *format, ...)
 			count += 1;
 		}
 
-/**		else if (format[i + 1] == 'd')
-		{
-			d = va_arg(arg, int);
-
-			if (d < 0)
-			{
-				_putchar('-');
-				d = (-1) * d;
-			}
-			write(1, &d, 8);
-			i += 1;
-			count += 1;
-
+/*
+ * else if (format[i + 1] == 'd')
+*		{
+*			d = va_arg(arg, int);
+*
+*			if (d < 0)
+*			{
+*				_putchar('-');
+*				d = (-1) * d;
+*			}
+*			write(1, &d, 8);
+*			i += 1;
+*			count += 1;
+*
 		}
-**/
+*/
 		else if (format[i + 1] == 's')
 		{
 			k = print_string(va_arg(arg, char*));
