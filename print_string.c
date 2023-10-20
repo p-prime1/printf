@@ -11,5 +11,5 @@ int print_string(const char *s)
 		i++;
 		k++;
 	}
-	return (0);
+	return (k);
 }
