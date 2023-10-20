@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i;
-	int d;
+	long unsigned int d;
 	char c;
 	va_list arg;
 
-	va_start(arg, *format);
+	va_start(arg, format);
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 				_putchar('-');
 				d = (-1) * d;
 			}
-			_putchar(d + '0');
+			write(1, &d, sizeof(&d));
 			i += 1;
 		}
 
