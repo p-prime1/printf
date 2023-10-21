@@ -10,6 +10,7 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_string(const char *s);
-
+int print_char(char c);
+int print_int(int num);
 
 #endif

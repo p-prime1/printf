@@ -1,6 +1,12 @@
-#include <unistd.h>
+#include "main.h"
 
-int _putchar(int c)
+/**
+ * _putchar - Prints character
+ * @c: Character to be printed
+ * Return: Always 0
+ */
+
+int _putchar(char c)
 {
 	write(1, &c, 1);
 	return (0);
